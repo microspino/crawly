@@ -11,7 +11,7 @@ Bonus points for tests and/or for making it as fast as possible!
 ---
 
 #### Usage
-Use **redis** as to store urls at runtime.
+Uses **redis** to store urls at runtime. Cleans it afterwards.
 Parsing by **oga**
 
 ```
