@@ -1,7 +1,7 @@
 class Crawly
   attr_reader :base_url, :max_size
 
-  def initialize(base_url, max_size=50)
+  def initialize(base_url, max_size = 50)
     @base_url = base_url
     @redis = Redis.new
     @extractor = Extractor.new(domain)
@@ -11,15 +11,13 @@ class Crawly
 
   def domain
     u = URI.encode(base_url)
-    s = URI.parse(u).scheme
-    h = URI.parse(u).host
-    "%s://%s" % [s, h]
+    "#{URI.parse(u).scheme}://#{URI.parse(u).host}"
   end
 
   def sitemap
     sitemap_urls.each do |url|
       if imgs_for(url).size > 0
-        @sitemap.add(url, :images => imgs_for(url))
+        @sitemap.add(url, images: imgs_for(url))
       else
         @sitemap.add(url)
       end
@@ -43,9 +41,7 @@ class Crawly
           next if visited?(u)
           swim(u)
         end
-        STDOUT.print('.')
       end
-
     rescue OpenURI::HTTPError => e
       puts "Unable to open #{url} because #{e}, skipping..."
     end

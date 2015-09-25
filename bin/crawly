@@ -9,10 +9,10 @@ begin
     puts c.sitemap
     c.clean
   else
-    puts "USAGE: crawly http://foobar.com  max_pages"
-    puts "       max_pages is optional, crawly will fetch max 50 links by default"
+    puts 'USAGE: crawly http://foobar.com  max_pages'
+    puts '       max_pages is optional, crawly fetches max 50 links by default'
   end
 rescue
   puts "I'm just an humble bot. I was unable to process your url."
-  puts "Could you please check its url and availability?"
+  puts 'Could you please check its url and availability?'
 end

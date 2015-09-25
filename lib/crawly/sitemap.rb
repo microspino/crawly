@@ -1,7 +1,7 @@
 class Crawly
   class Sitemap
     SCHEMAS = { 'image' => 'http://www.google.com/schemas/sitemap-image/1.1' }
-
+    
     def initialize
       @xml_start = <<-SITEMAPXML
         <?xml version="1.0" encoding="UTF-8"?>
