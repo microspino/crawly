@@ -1,0 +1,18 @@
+#!/usr/bin/env ruby
+
+require 'crawly'
+
+begin
+  if ARGV.length > 0 && ARGV.length < 3
+    c = Crawly.new(ARGV[0], ARGV[1])
+    c.swim
+    puts c.sitemap
+    c.clean
+  else
+    puts "USAGE: crawly http://foobar.com  max_pages"
+    puts "       max_pages is optional, crawly will fetch max 50 links by default"
+  end
+rescue
+  puts "I'm just an humble bot. I was unable to process your url."
+  puts "Could you please check its url and availability?"
+end
