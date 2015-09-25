@@ -1,3 +1,18 @@
+# Crawly
+# Simple single domain crawler and sitemap builder
+#
+# Uses redis to store urls during visits:
+# - visited: avoid url re-visit
+# - sitemapped: flag urls ready to be rendered as xml
+# this provide foundations for resumable visites.
+#
+# Used redis sets are cleaned after visiting a website.
+#
+# Uses recursion.
+# Uses a giang Regex pattern to validate urls
+# Stores locations for images: png|jp(e)g|svg|gif allowed
+#
+# Skips 404s.
 class Crawly
   attr_reader :base_url, :max_size
 

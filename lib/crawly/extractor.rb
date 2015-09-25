@@ -1,4 +1,6 @@
 class Crawly
+  # Extractor:
+  # Extract images and new urls to visit from every page
   class Extractor
     attr_reader :domain
 
