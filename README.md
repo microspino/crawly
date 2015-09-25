@@ -2,17 +2,13 @@
 ---
 We'd like you to write a simple web crawler in Ruby. 
 
-It should be limited to one domain 
-
-so when crawling foobar.com it would crawl all pages within the foobar.com domain, but not follow the links to external domains. 
-
+It should be limited to one domain.
+When crawling foobar.com it would crawl all pages within the foobar.com domain, but not follow the links to external domains. 
 Given a URL, it should output a site map, showing which static assets each page depends on. 
-
 The crawler needs to stop after a certain amount of pages have been crawled. 
-
 Bonus points for tests and/or for making it as fast as possible! 
 
-It should probably take you an hour or two, so code something you can finish within this amount of time.
+---
 
 #### Usage
 Use **redis** as to store urls at runtime.
@@ -35,8 +31,7 @@ Use **rake** or **rake test**
 #### As a Gem
 Not released yet on github but packaged as a gem.
 
-Build it with **gem build crawly.gemspec**
-
+Build it with **gem build crawly.gemspec**<br/>
 Install withh **gem install crawly-0.0.1.gem**
 
-_Please ignore the warnings alpha prod here ;)_
+_Please ignore the warnings alpha software here ;)_
