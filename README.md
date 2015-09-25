@@ -29,7 +29,7 @@ To display a pretty formatted sitemap on OS X pipe the sitemap txt to **xmlint**
 Use **rake** or **rake test**
 
 #### As a Gem
-Not released yet on github but packaged as a gem.
+Not released yet on rubygems but packaged as a gem.
 
 Build it with **gem build crawly.gemspec**<br/>
 Install withh **gem install crawly-0.0.1.gem**
