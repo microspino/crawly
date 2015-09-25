@@ -1,4 +1,4 @@
-### Exercise
+#### Requirements
 ---
 We'd like you to write a simple web crawler in Ruby. 
 
@@ -14,7 +14,7 @@ Bonus points for tests and/or for making it as fast as possible!
 
 It should probably take you an hour or two, so code something you can finish within this amount of time.
 
-### Usage
+#### Usage
 Use **redis** as to store urls at runtime.
 Parsing by **oga**
 
@@ -29,12 +29,14 @@ To display a pretty formatted sitemap on OS X pipe the sitemap txt to **xmlint**
 ```
   pbpaste | xmllint --format -
 ```
-### Test
+#### Test
 Use **rake** or **rake test**
 
-### As a gem
+#### As a Gem
 Not released yet on github but packaged as a gem.
-Build it with gem build crawly.gemspec
-Install withh gem install crawly-0.0.1.gem
+
+Build it with **gem build crawly.gemspec**
+
+Install withh **gem install crawly-0.0.1.gem**
 
 _Please ignore the warnings alpha prod here ;)_
