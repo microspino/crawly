@@ -1,5 +1,5 @@
 class Crawly::SitemapUrl < Hash
-  def initialize(path, opts={})
+  def initialize(path, opts = {})
     self.merge!(
     :priority   => opts[:priority],
     :changefreq => opts[:changefreq],
@@ -7,7 +7,7 @@ class Crawly::SitemapUrl < Hash
     :expires    => opts[:expires],
     :host       => opts[:host],
     :loc        => path,
-    :images     => opts[:images] || [],
+    :images     => opts[:images] || []
     )
   end
     
@@ -21,7 +21,6 @@ class Crawly::SitemapUrl < Hash
           builder.image :loc, image
         end
       end
-
     end
     builder << ''
   end
