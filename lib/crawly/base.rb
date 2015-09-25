@@ -27,7 +27,7 @@ class Crawly
     @sitemap.write
   end
 
-  def swim(url=base_url)
+  def swim(url = base_url)
     check_url(url)
     begin
       open(url) do |f|
@@ -38,12 +38,12 @@ class Crawly
         sitemap!(url) unless sitemapped?(url)
         mark_as_visited!(url)
 
-        urls.each do |url|
+        urls.each do |u|
           break if max_reached?
-          next if visited?(url)
-          swim(url)
+          next if visited?(u)
+          swim(u)
         end
-        STDOUT.print(".")
+        STDOUT.print('.')
       end
 
     rescue OpenURI::HTTPError => e
@@ -75,7 +75,7 @@ class Crawly
   end
 
   def sitemap!(url)
-    @redis.sadd("crawly:#{h_domain}:sitemapped", url) 
+    @redis.sadd("crawly:#{h_domain}:sitemapped", url)
   end
 
   def mark_as_visited!(url)

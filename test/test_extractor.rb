@@ -15,8 +15,8 @@ class ExtractorTest < Minitest::Test
     refute @xtr.send(:same_domain?, b)
   end
 
-  def test_is_anchor?
-    assert @xtr.send(:is_anchor?, '#top')
+  def test_anchor?
+    assert @xtr.send(:anchor?, '#top')
   end
 
   def test_ico_js_or_css?

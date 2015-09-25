@@ -9,7 +9,7 @@ class Crawly::Extractor
     url.to_s =~ PERFECT_URL_PATTERN
   end
 
-  def extract(txt="")
+  def extract(txt = '')
     urls = extract_hrefs(txt)
     image_hrefs = urls.select do |u|
       u.match(/\.(jpe?g|gif|png|svg)/i)
@@ -38,14 +38,8 @@ class Crawly::Extractor
 
   def process(href)
     url = rel_to_abs(href)
-
-    if url.to_s.empty? || ico_js_or_css?(url) || is_anchor?(url)
-      return
-    end
-
-    if Crawly::Extractor.url_is_valid?(url) && same_domain?(url)
-      url.to_s
-    end
+    return if url.to_s.empty? || ico_js_or_css?(url) || anchor?(url)
+    url.to_s if self.class.url_is_valid?(url) && same_domain?(url)
   end
 
   def rel_to_abs(href)
@@ -57,8 +51,7 @@ class Crawly::Extractor
       puts "Can't handle #{url} :( because #{ie} skipping..."
       nil
     end
-
-    url = URI.join(domain,url) if url.relative?
+    URI.join(domain, url) if url.relative?
   end
 
   def same_domain?(url)
@@ -67,8 +60,8 @@ class Crawly::Extractor
     a == b
   end
 
-  def is_anchor?(url)
-    url.to_s[0,1] == '#'
+  def anchor?(url)
+    url.to_s[0, 1] == '#'
   end
 
   def ico_js_or_css?(url)
